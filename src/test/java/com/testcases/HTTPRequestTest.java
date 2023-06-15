@@ -55,7 +55,7 @@ public class HTTPRequestTest {
 
 		int statusCode = response.getStatusCode();
 		JsonPath json = response.getBody().jsonPath();
-		
+
 		Assert.assertEquals(statusCode, 201);
 		Assert.assertEquals(body.get("username"), json.getString("username"));
 		Assert.assertEquals(body.get("email"), json.getString("email"));
@@ -64,7 +64,7 @@ public class HTTPRequestTest {
 
 	@Test
 	public void verifyGetByIDRequest() {
-
+		//To-do
 	}
 
 	@AfterMethod
