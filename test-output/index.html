@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\Phanison\AppData\Local\Temp\testng-eclipse-473339905\testng-customsuite.xml</span>
+                    <span>C:\Users\Phanison\AppData\Local\Temp\testng-eclipse--752193732\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods,   3 passed</span>
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,17 +104,12 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.testcases.GetTest" class="method navigator-link" hash-for-method="getAllUsers">getAllUsers</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="com.testcases.HTTPRequestTest" class="method navigator-link" hash-for-method="verifyGetByIDRequest">verifyGetByIDRequest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.testcases.GetTest" class="method navigator-link" hash-for-method="getUserByID">getUserByID</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.testcases.GetTest" class="method navigator-link" hash-for-method="postUser">postUser</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="com.testcases.HTTPRequestTest" class="method navigator-link" hash-for-method="verifyPostRequest">verifyPostRequest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -132,28 +127,21 @@
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.testcases.GetTest</span>
+              <span class="class-name">com.testcases.HTTPRequestTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="getAllUsers">
-                  </a> <!-- getAllUsers -->
-                  <span class="method-name">getAllUsers</span>
+                  <a name="verifyGetByIDRequest">
+                  </a> <!-- verifyGetByIDRequest -->
+                  <span class="method-name">verifyGetByIDRequest</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="getUserByID">
-                  </a> <!-- getUserByID -->
-                  <span class="method-name">getUserByID</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="postUser">
-                  </a> <!-- postUser -->
-                  <span class="method-name">postUser</span>
+                  <a name="verifyPostRequest">
+                  </a> <!-- verifyPostRequest -->
+                  <span class="method-name">verifyPostRequest</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -161,7 +149,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Phanison\AppData\Local\Temp\testng-eclipse-473339905\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Phanison\AppData\Local\Temp\testng-eclipse--752193732\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -170,7 +158,7 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.testcases.GetTest&quot;/&gt;
+      &lt;class name=&quot;com.testcases.HTTPRequestTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -210,24 +198,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'postUser')
-data.setCell(0, 2, 'com.testcases.GetTest')
-data.setCell(0, 3, 5496);
+data.setCell(0, 1, 'verifyPostRequest')
+data.setCell(0, 2, 'com.testcases.HTTPRequestTest')
+data.setCell(0, 3, 5121);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'getUserByID')
-data.setCell(1, 2, 'com.testcases.GetTest')
-data.setCell(1, 3, 639);
-data.setCell(2, 0, 2)
-data.setCell(2, 1, 'getAllUsers')
-data.setCell(2, 2, 'com.testcases.GetTest')
-data.setCell(2, 3, 55);
+data.setCell(1, 1, 'verifyGetByIDRequest')
+data.setCell(1, 2, 'com.testcases.HTTPRequestTest')
+data.setCell(1, 3, 15);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 6 seconds</span>
+              <span class="suite-total-time">Total running time: 5 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -253,19 +237,39 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.testcases.GetTest</div> <!-- chronological-class-name -->
-              <div class="test-method">
-                <span class="method-name">postUser</span>
+              <div class="chronological-class-name">com.testcases.HTTPRequestTest</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">beforeTest</span>
                 <span class="method-start">0 ms</span>
-              </div> <!-- test-method -->
+              </div> <!-- configuration-test before -->
+              <div class="configuration-method before">
+                <span class="method-name">setup(public void com.testcases.HTTPRequestTest.verifyGetByIDRequest())</span>
+                <span class="method-start">1345 ms</span>
+              </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">getAllUsers</span>
-                <span class="method-start">5501 ms</span>
+                <span class="method-name">verifyGetByIDRequest</span>
+                <span class="method-start">1365 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tear(public void com.testcases.HTTPRequestTest.verifyGetByIDRequest(), [TestResult name=verifyGetByIDRequ...)</span>
+                <span class="method-start">1388 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup(public void com.testcases.HTTPRequestTest.verifyPostRequest())</span>
+                <span class="method-start">1409 ms</span>
+              </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">getUserByID</span>
-                <span class="method-start">5561 ms</span>
+                <span class="method-name">verifyPostRequest</span>
+                <span class="method-start">1410 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tear(public void com.testcases.HTTPRequestTest.verifyPostRequest(), [TestResult name=verifyPostRequest st...)</span>
+                <span class="method-start">6533 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-test after">
+                <span class="method-name">afterTest</span>
+                <span class="method-start">6537 ms</span>
+              </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
