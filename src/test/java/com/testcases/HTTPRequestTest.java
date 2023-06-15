@@ -6,6 +6,7 @@ import java.lang.reflect.Method;
 import java.util.Map;
 
 import org.testng.Assert;
+import org.testng.Assert.ThrowingRunnable;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -15,6 +16,9 @@ import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.markuputils.CodeLanguage;
+import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.utils.RequestUtil;
 
@@ -46,7 +50,7 @@ public class HTTPRequestTest {
 		test = extent.createTest(method.getName());
 	}
 
-	@Test
+	@Test(priority = 1)
 	public void verifyPostRequest() {
 
 		Map<String, String> body = RequestUtil.generateBody();
@@ -56,15 +60,18 @@ public class HTTPRequestTest {
 		int statusCode = response.getStatusCode();
 		JsonPath json = response.getBody().jsonPath();
 
+		test.info("Status code returned from API = " + statusCode);
+		test.info(MarkupHelper.createCodeBlock(response.getBody().asPrettyString(), CodeLanguage.JSON));
+
 		Assert.assertEquals(statusCode, 201);
 		Assert.assertEquals(body.get("username"), json.getString("username"));
 		Assert.assertEquals(body.get("email"), json.getString("email"));
-		Assert.assertEquals(body.get("password"), json.getString("password"));
+		Assert.assertEquals(body.get("password"), json.getString("password")+"qq");
 	}
 
-	@Test
+	@Test(priority = 2)
 	public void verifyGetByIDRequest() {
-		//To-Do
+		// To-Do
 	}
 
 	@AfterMethod
@@ -72,9 +79,9 @@ public class HTTPRequestTest {
 		if (result.getStatus() == ITestResult.SUCCESS) {
 			test.pass(String.format("Test case [ %s ] PASSED", method.getName()));
 		} else if (result.getStatus() == ITestResult.FAILURE) {
-			test.pass(String.format("Test case [ %s ] FAILED", method.getName()));
+			test.fail(String.format("Test case [ %s ] FAILED", method.getName()));
 		} else if (result.getStatus() == ITestResult.SKIP) {
-			test.pass(String.format("Test case [ %s ] SKIPPED", method.getName()));
+			test.skip(String.format("Test case [ %s ] SKIPPED", method.getName()));
 		}
 	}
 
