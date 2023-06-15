@@ -5,8 +5,7 @@
     <classes>
       <class name="com.testcases.GetTest">
         <methods>
-          <include name="beforeTest"/>
-          <include name="postUserSuccess"/>
+          <include name="postUser"/>
         </methods>
       </class> <!-- com.testcases.GetTest -->
     </classes>

@@ -9,12 +9,14 @@ import org.testng.annotations.Test;
 
 import com.utils.RequestUtil;
 
-import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
 
 public class GetTest {
 
 	private final String BASE_URL = "http://localhost:5000";
+	private JsonPath jsonPath;
 	
 	@Test
 	public void getAllUsers() {
@@ -27,36 +29,34 @@ public class GetTest {
 			.statusCode(200);
 	}
 	
-//	@Test
+	@Test(dependsOnMethods = {"postUser"} )
 	public void getUserByID() {
 		
-		String _id = "6489fda91f0a53c2ec20f354";
-		String endpoint = "/users/"+_id;
+		String id = jsonPath.getString("_id");
+		String username = jsonPath.getString("username");
+		String email = jsonPath.getString("email");
 		
 		given()
 			.baseUri(BASE_URL)
+			.pathParam("id", id)
 		.when()
-			.get(endpoint)
+			.get("/users/{id}")
 		.then()
 			.assertThat()
-			.statusCode(200)
-			.body("username", IsEqual.equalTo(""))
-			.body("email", IsEqual.equalTo(""))
-			.body("password", IsEqual.equalTo(""));
+			.body("username", IsEqual.equalTo(username))
+			.body("email", IsEqual.equalTo(email));
 	}
 	
 	@Test
 	public void postUser() {
-		RestAssured.baseURI = BASE_URL;
 		
 		Map<String, String> body = RequestUtil.generateBody();
 		
+	Response response = 
 		given()
 			.baseUri(BASE_URL)
 			.contentType(ContentType.JSON)
 			.body(body)
-			.log()
-			.body()
 		.when()
 			.post("/users")
 		.then()
@@ -64,7 +64,11 @@ public class GetTest {
 			.statusCode(201)
 			.body("username", IsEqual.equalTo(body.get("username")))
 			.body("email", IsEqual.equalTo(body.get("email")))
-			.body("password", IsEqual.equalTo(body.get("password")));
+			.body("password", IsEqual.equalTo(body.get("password")))
+			.extract()
+			.response();
+	
+	jsonPath = response.body().jsonPath();
 			
 	}
 }
